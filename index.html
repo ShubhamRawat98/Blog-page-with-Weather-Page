@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Satisfy&family=Trispace&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="weatherNav">
+        <div class="weatherInfo">
+            <div class="info">
+                <div class="weatherPlace"></div>
+                <div style="display:flex; margin-bottom: -5px; margin-left: -8px;">
+                    <img src="" alt="" class="icon" style="width:40px ; ">
+                    <div class="weatherVibe" style="padding-top:10px"></div>
+                </div>
+                <div class="humidity"></div>
+                <div class="wind" style="margin-top:4px;"></div>
+            </div>
+            <div class="temp"></div>
+        </div>
+
+        <div class="weatherSearch">
+            <input type="text" class="placeSearch" placeholder="  Search city for weather info">
+            <button class="placeBtn">
+                <i class="fa fa-search">
+                </i>
+            </button>
+        </div>
+    </nav>
+    <div class="whiteLine"></div>
+    <div class="travelHeader">
+        <h1>Ataraxia we need</h1>
+    </div>
+
+    <div class="card" id="mainCard">
+        <div class="text" id="mainCardText">
+            <h2>What is ataraxia?</h2>
+            <p>Ataraxia is a blissful, peaceful state of mind. Many people who meditate hope to achieve a state of
+            ataraxia. If you tend to get flustered, you're probably envious of your calm, serene friend's ataraxia — it
+            might seem like she never seems to worry about anything.
+            </p> 
+        </div>
+        <div class="cardImage" id="mainCardImage"></div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,569 @@
+$bg-color: rgb(255, 255, 255);
+$proFont: 'Trispace', sans-serif;
+$sFont: 'Satisfy', cursive;
+
+* {
+    font-family: $proFont;
+}
+
+body {
+    background-color: $bg-color;
+
+}
+
+.preloader {
+    background-color: white;
+    position: fixed;
+    z-index: 7;
+    width: 100%;
+    height: 100vh;
+    background: url(/assest/earth.gif);
+    background-position: center;
+}
+
+.weatherNav {
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: auto;
+    // animation: change 50s 3s infinite;
+    // animation-timing-function: ease-in-out;
+    &::after{
+        content: "";
+        width: 100%;
+        height: 750px;
+        background-color: black;
+    }
+
+}
+
+// @keyframes change {
+//     12%{
+//         background: url(/assest/barca-sunset.jpg);
+//         background-repeat: no-repeat;
+//         background-size: cover;    
+//     }
+//     24%{
+//         background: url(/assest/barca-alley.jpg);
+//         background-repeat: no-repeat;
+//         background-size: cover;    
+//     }
+//     46%{
+//         background: url(/assest//hills-cloud.jpg);
+//         background-repeat: no-repeat;
+//         background-size: cover;    
+//     }
+//     58%{
+//         background: url(/assest/travellers.jpg);
+//         background-repeat: no-repeat;
+//         background-size: cover;    
+//     }
+//     70%{
+//         background: url(/assest/village.jpg);
+//         background-repeat: no-repeat;
+//         background-size: cover;    
+//     }
+//     82%{
+//         background: url(/assest/water-fall.jpg);
+//         background-repeat: no-repeat;
+//         background-size: cover;    
+//     }
+
+
+// }
+
+
+.weatherInfo {
+    display: flex;
+    padding: 30px 4%;
+    transition: all 1s linear;
+
+    .info {
+        font-size: 15px;
+        color: white;
+        animation: bounceIn 4s;
+        animation-timing-function: ease-in;
+        transition: all 1s linear;
+        
+        .weatherPlace {
+            margin-bottom: 20px;
+            font-size: 50px;
+            font-weight: light;
+            animation: bounceIn 4s ;
+            animation-timing-function: ease-in;
+            transition: all 1s linear;
+        }
+    }
+    
+    .temp {
+        letter-spacing: -5px;
+        color: white;
+        padding-left: 50px;
+        font-size: 55px;
+        align-items: center;
+        align-self: center;
+        animation: bounceIn 4s ;
+        animation-timing-function: ease-in;
+        transition: all 1s linear;
+    }
+}
+
+
+.weatherSearch {
+    z-index: 6;
+    position: absolute;
+    top: 93px;
+    right: 60px;
+    border-radius: 30px;
+    transition: all 1s linear;
+    // background-color: red;
+    border: none;
+
+    input {
+        letter-spacing: 0;
+        font-family: 'Trispace', sans-serif;
+        color: rgb(92, 85, 85);
+        border-radius: 30px;
+        border: 4px solid white;
+        position: relative;
+        padding: 8px;
+        width: 280px;
+        background-color: rgb(237, 237, 237);
+        transition: all 1s linear;
+        animation: changeColor 4s infinite ;
+        animation-timing-function: ease-in;
+        &:hover {
+            animation: pause;
+            background-color: rgb(197, 192, 192);
+
+        }
+    }
+    
+}
+
+button {
+    opacity: .2;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: rgb(237, 237, 237);
+    height: 70%;
+    width: 25px;
+    border: none;
+    border-radius: 43%;
+    position: absolute;
+    right: 6.8px;
+    top: 5.7px;
+    transition: all 1s linear;
+    
+    
+    i {
+        color: rgb(0, 0, 0);
+    }
+}
+@keyframes changeColor {
+    50%{
+        background-color: rgb(192, 192, 192);
+        color: white;
+    }
+}
+
+.whiteLine {
+    top: 220px;
+    background-color: $bg-color;
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+}
+
+.travelHeader {
+
+    z-index: 5;
+    position: absolute;
+    top: 190px;
+    width: 400px;
+    right: 25%;
+    background-color: $bg-color;
+    border-radius: 50px;
+    transition: all 1s linear;
+
+    h1 {
+        color: rgb(22, 21, 21);
+        letter-spacing: 4px;
+        margin: 8px 30px;
+        font-family: $sFont;
+        text-align: center;
+        transition: all 1s linear;
+    }
+
+}
+
+#mainCard {
+    position: relative;
+    top: -535px;
+    height: 540px;
+    width: 100%;
+    transition: all 1s linear;
+
+    #mainCardText {
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        opacity: .8;
+        position: absolute;
+        top: 8px;
+        left: 10%;
+        width: 40%;
+        padding: 10px 30px;
+        transition: all 1s linear;
+
+        h2,
+        p {
+            width: 80%;
+            color: rgb(0, 0, 0);
+            opacity: 1;
+            transition: all 1s linear;
+
+        }
+    }
+
+    #mainCardImage {
+        border: 5px solid white;
+        box-shadow: 1px 1px 10px black;
+        border-radius: 20px;
+        position: absolute;
+        top: 75px;
+        left: 46%;
+        width: 50%;
+        height: 330px;
+        background: url(/assest/barca-beauty.jpg);
+        background-size: 100% 100%;
+        transition: all 1s linear;
+    }
+}
+
+
+@media screen and (max-width:1000px) {
+    .weatherSearch {
+        right: 8%;
+        top: 155px;
+        transition: all 1s linear;
+    }
+
+    .weatherInfo {
+        padding: 20px 5%;
+
+        .temp {
+            transition: all 1s linear;
+            position: absolute;
+            top: 50px;
+            right: 10%;
+            font-size: 70px;
+
+        }
+    }
+
+    .travelHeader {
+        top: 200px;
+        transition: all 1s linear;
+        right: 60%;
+        width: 450px;
+
+        h1 {
+            transition: all 1s linear;
+            margin: 0px 20px 0px 100px;
+        }
+    }
+    #mainCard {
+        #mainCardText {
+            left: 8%
+        }
+        }
+
+}
+
+@media screen and (max-width:900px) {
+
+    .travelHeader {
+        right: 57%;
+        width: 430px;
+        transition: all 1s linear;
+
+        h1 {
+            margin: 0px 0px 0px 70px;
+            transition: all 1s linear;
+        }
+    }
+    // #mainCard{
+    //     #mainCardText{
+    //         border-radius: 20% 5% 20% 5% / 20% 5% 20% 5% ;
+    //     }
+    // }
+}
+
+@media screen and (max-width:800px) {
+    .weatherSearch {
+        top: 150px;
+        right: 5%;
+        transition: all 1s linear;
+    }
+
+    .weatherInfo {
+        padding: 30px 5%;
+
+        .temp {
+            top: 65px;
+            font-size: 50px;
+            right: 8%;
+            transition: all 1s linear;
+        }
+    }
+
+    .travelHeader {
+        top: 440px;
+        right: 24%;
+        width: 348px;
+        transition: all 1s linear;
+        h1{
+            font-size: 28px;
+            margin:4px 0;
+        }
+
+    }
+
+    #mainCard {
+        #mainCardText {
+            width: 65%;
+            top: 35px;
+            height: 250px;
+            left: 5%;
+            transition: all 1s linear;
+          padding: 5px 35px;
+
+            h2 {
+                font-size: 21px;
+                width: 100%;
+                transition: all 1s linear;
+            }
+
+            p {
+                font-size: 15px;
+                width: 100%;
+                transition: all 1s linear;
+
+            }
+        }
+        #mainCardImage {
+            box-shadow: 1.5px 1.5px 15px black;
+            top: 240px;
+            left: 18%;
+            width: 75%;
+            height: 250px;
+            transition: all 1s linear;
+        }
+    }
+
+
+
+}
+
+@media screen and (max-width:650px) {
+    .weatherSearch {
+        right: 12%;
+        top: 203px;
+        transition: all 1s linear;
+
+    }
+
+    .weatherInfo {
+        .info {
+            .weatherPlace {
+                font-size: 40px;
+                margin-bottom: 15px;
+                transition: all 1s linear;
+            }
+        }
+
+        .temp {
+            right: 6%;
+            top: 90px;
+            transition: all 1s linear;
+        }
+    }
+
+    .travelHeader {
+        top: 435px;
+        right: 19%;
+        width: 63%;
+        transition: all 1s linear;
+
+        h1 {
+            font-size: 25px;
+            margin: 3px 0px;
+            transition: all 1s linear;
+        }
+    }
+    #mainCard {
+        #mainCardText {
+
+            width: 79%;
+            top: 5px;
+            left: 3.5%;
+            padding: 5px 35px;
+            transition: all 1s linear;
+        }
+        #mainCardImage {
+            border-radius: 20px;
+            top: 230px;
+            left: 6%;
+            width: 92%;
+            height: 280px;
+            transition: all 1s linear;
+        }
+    }
+
+ 
+}
+
+@media screen and (max-width:550px) {
+
+    .weatherInfo {
+        .info {
+            font-size: 13px;
+            transition: all 1s linear;
+        }
+
+        .temp {
+            right: 6%;
+            top: 90px;
+            font-size: 40px;
+            transition: all 1s linear;
+        }
+    }
+    .travelHeader {
+        top: 450px;
+    }
+
+    #mainCard {
+        #mainCardText {
+
+            width: 75%;
+            top: 5px;
+            left: 4%;
+            padding: 7px 40px;
+            transition: all 1s linear;
+            h2{
+                font-size: 18px;
+            }
+            p{
+                font-size: 15px;
+            }
+        }
+        #mainCardImage {
+            top :245px;
+            height: 270px;           
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+    .weatherSearch {
+        input {
+            letter-spacing: -1.8px;
+            width: 210px;
+            transition: all 1s linear;
+        }
+
+    }
+
+    .weatherInfo {
+        .info {
+            .weatherPlace {
+                font-size: 35px;
+                transition: all 1s linear;
+            }
+        }
+
+        .temp {
+            right: 8%;
+            top: 90px;
+            font-size: 35px;
+            transition: all 1s linear;
+        }
+    }
+    #mainCard {
+        #mainCardText {
+
+            width: 73%;
+            top: 5px;
+            left: 3%;
+            padding: 7px 40px;
+            transition: all 1s linear;
+            h2{
+                font-size: 17px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+        #mainCardImage {
+            top :245px;
+            height: 270px;           
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .weatherInfo {
+        .info {
+            font-size: 11px;
+
+            .weatherPlace {
+                font-size: 30px;
+                transition: all 1s linear;
+            }
+        }
+
+        .temp {
+            right: 10%;
+            font-size: 35px;
+            transition: all 1s linear;
+        }
+    }
+    .travelHeader {
+        border: 4px solid rgb(255, 255, 255);
+        background-color: rgb(234, 234, 234);
+        top: 452px ;
+        width: 200px;
+        right: 15%;
+        h1{
+            margin: 2px 5px;
+            font-size: 17px;
+        }
+    }
+
+    #mainCard {
+        #mainCardText {
+
+            width: 75%;
+            top: 5px;
+            left: 5%;
+            padding: 30px 30px;
+            transition: all 1s linear;
+            h2{
+                font-size: 15px;
+            }
+            p{
+                font-size: 12px;
+            }
+        }
+        #mainCardImage {
+            border: 4px solid white;
+
+            left: 15%;
+            width: 80%;
+            top :245px;
+            height: 260px;           
+        }
+    }
+}
